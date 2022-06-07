@@ -48,4 +48,4 @@ You can communicate with other clients on the server using multiple features lik
 
 # Contact
 
-Email: aa19341@essex.ac.uk
+Email: anyanjoarthur@hotmail.com
