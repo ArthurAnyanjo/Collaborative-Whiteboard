@@ -48,4 +48,5 @@ You can communicate with other clients on the server using multiple features lik
 
 # Contact
 
-Email: anyanjoarthur@hotmail.com [Linkedin](https://www.linkedin.com/in/arthur-anyanjo-031913198/)
+Email: anyanjoarthur@hotmail.com
+I can also be reached via [Linkedin](https://www.linkedin.com/in/arthur-anyanjo-031913198/)
