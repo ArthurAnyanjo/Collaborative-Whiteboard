@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" lang="">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiteboard</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+</head>
+<nav class="navbar">
+    <a href="index.jsp" class="nav-logo">BoardBook</a>
+    <ul>
+        <li><a href="index.jsp">Home</a></li>
+        <li><a href="aboutUs.jsp">About</a></li>
+        <li><a href="whiteboard.html">Whiteboard</a></li>
+    </ul>
+</nav>
+<br>
+<div style="padding: 60px;
+             overflow: hidden;
+             background-color: #313131;
+             height: 1500px;
+             font-family: Lato,serif;
+             color: white;
+">
+    <h3> Collaborative Whiteboard App </h3>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <canvas id="messageBoard" width=500 height="400" style="border: 5px solid #000000;
+                  box-shadow: -3px 2px 9px 6px  black;
+                  cursor: pointer;">
+                    </canvas>
+                </td>
+                <td>
+                    <form name="MessageForm">
+                        <table>
+                            <tr>
+                                <label style="display: flex; padding-left: 7px"><strong>Color:</strong>
+                                    <input type="radio" name="color" checked="true">
+                                    <input type="color" id="colorpick" name="color" value="#FF0000">
+                                </label>
+                            </tr>
+                            <tr>
+                                <label style="display: block; padding-left: 1px "><strong>Shape:</strong>
+                                    <input type="radio" name="shape" value="square" checked="true"> Square
+                                    <input type="radio" name="shape" value="circle"> Circle
+                                    <input type="radio" name="shape" value="triangle"> Triangle
+                                    <input type="radio" name="shape" value="oval"> Oval
+                                    <input type="radio" name="shape" value="diamond"> Diamond
+                                    <input type="radio" name="shape" value="speechM"> SMark
+                                    <input type="radio" name="shape" value="heart"> Heart
+                                    <label style="padding-left: 50px"><input type="radio" name="shape" value="draw">
+                                        Draw</label>
+                                    <input type="range" min="1" max="100" id="lineWidth">
+                                    <span></span>
+                                </label>
+                            </tr>
+
+                            <tr>
+                                <label style="display: flex; padding: 17px;"><strong>Text:</strong>
+                                    <input type="radio" name="shape" value="text">
+                                    <input type="text" id="textbox" name="message" placeholder="Write Message Here">
+                                    <select id="input-font">
+                                        <option value="Times New Roman"
+                                                selected="selected">
+                                            Times New Roman
+                                        </option>
+                                        <option value="Arial">Arial</option>
+                                        <option value="fantasy">Fantasy</option>
+                                        <option value="cursive">Cursive</option>
+                                    </select>
+                                    <select id="input-font-size">
+                                        <option value="2px">2</option>
+                                        <option value="8px">8</option>
+                                        <option value="16px">16</option>
+                                        <option value="35px" selected="selected">35</option>
+                                        <option value="50px">50</option>
+                                        <option value="75px">75</option>
+                                    </select>
+                                    <span></span>
+                                </label>
+                            </tr>
+                            <tr>
+                                <label style="display: flex; padding-left: 12px;"><strong>Note:</strong>
+                                    <input type="radio" name="shape" value="stickyNote">
+                                    <input type="text" id="stickyBox" name="message"
+                                           placeholder="Write Sticky Note Here">
+                                    <select id="input-font-Note">
+                                        <option value="Times New Roman"
+                                                selected="selected">
+                                            Times New Roman
+                                        </option>
+                                        <option value="Arial">Arial</option>
+                                        <option value="fantasy">Fantasy</option>
+                                        <option value="cursive">Cursive</option>
+                                    </select>
+                                    <span></span>
+                                </label>
+                            </tr>
+
+                            <tr>
+                                <label style="display: flex ; padding-left: 5px;"><strong>Image:</strong>
+                                    <input type="radio" name="shape" value="load">
+                                    <input type="file" name="imageLoader" id="imageLoader"/>
+                                    <span></span>
+                                </label>
+                            </tr>
+
+                             <tr>
+                                <label style="display:block; padding-left: 4px"><strong>Video:</strong>
+                                     <input type = "radio" name = "shape" value = "vid">
+                                     <input type="text" id="Vidsrc" name="vidsrc" placeholder="Include Video URL">
+                                     <span></span>
+                                 </label>
+                             </tr>
+
+                            <tr>
+                                <th></th>
+                                <td><input type="checkbox" id="available" value="Online" checked="true">Online</td>
+                                <td><input type="button" id="clearButton" value="Clear" class="buttonsA"></td>
+                                <td><input type="submit" class="buttonsA" value="Send"
+                                           onclick="BinaryCaller(); return false;"></td>
+                            </tr>
+                            <!--
+                            <tr>
+                                <th></th>
+                                <td><input type="button" id="undoButton" value="undo" class="buttonsA"></td>
+                                <td><input type="button" id="redoButton" value="redo" class="buttonsA"></td>
+                            </tr>
+                            -->
+                            <tr>
+                                <th></th>
+                                <td><input type="button" id="saveButton" value="Save Board" class="buttonsA"onclick="SaveCanvasAsImage()"></td>
+                            </tr>
+
+                        </table>
+                    </form>
+        </table>
+    </div>
+
+    <script type="text/javascript" src="websocket.js"></script>
+    <div id="output"></div>
+    <script type="text/javascript" src="actualBoard.js"></script>
+</div>
+</body>
+</html>
